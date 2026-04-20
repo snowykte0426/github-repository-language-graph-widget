@@ -13,10 +13,12 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const urlObj  = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-  const username = (urlObj.searchParams.get('username') || '').trim();
-  const repo     = (urlObj.searchParams.get('repo')     || '').trim();
-  const theme    = urlObj.searchParams.get('theme') || 'light';
+  const urlObj    = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+  const username  = (urlObj.searchParams.get('username') || '').trim();
+  const repo      = (urlObj.searchParams.get('repo')     || '').trim();
+  const theme     = urlObj.searchParams.get('theme') || 'light';
+  const langsRaw  = urlObj.searchParams.get('langs_count');
+  const langsCount = langsRaw ? Math.min(Math.max(1, parseInt(langsRaw, 10) || 20), 100) : 20;
 
   if (!username || !repo) {
     return sendError(res, 400, 'Missing required query parameters: username, repo');
@@ -29,7 +31,7 @@ module.exports = async function handler(req, res) {
 
   try {
     const languages = await fetchLanguages(username, repo);
-    const svg = renderCard(languages, username, repo, resolvedTheme);
+    const svg = renderCard(languages, username, repo, resolvedTheme, langsCount);
 
     res.writeHead(200, {
       'Content-Type':           'image/svg+xml',
