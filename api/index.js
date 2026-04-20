@@ -146,6 +146,7 @@ function landingPage() {
           <tr><td>repo</td><td>Repository name (required)</td><td>—</td></tr>
           <tr><td>theme</td><td><span class="badge">light</span> or <span class="badge">dark</span></td><td>light</td></tr>
           <tr><td>langs_count</td><td>Number of languages to display (max 100, rest grouped as Other)</td><td>20</td></tr>
+          <tr><td>width</td><td>Card width in px (min 300, max 1000) — title &amp; names auto-scale</td><td>495</td></tr>
         </tbody>
       </table>
     </div>
