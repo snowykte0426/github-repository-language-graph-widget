@@ -24,8 +24,10 @@ module.exports = async function handler(req, res) {
   const username  = (urlObj.searchParams.get('username') || '').trim();
   const repo      = (urlObj.searchParams.get('repo')     || '').trim();
   const theme     = urlObj.searchParams.get('theme') || 'light';
-  const langsRaw  = urlObj.searchParams.get('langs_count');
+  const langsRaw   = urlObj.searchParams.get('langs_count');
   const langsCount = langsRaw ? Math.min(Math.max(1, parseInt(langsRaw, 10) || 20), 100) : 20;
+  const widthRaw   = urlObj.searchParams.get('width');
+  const cardWidth  = widthRaw ? Math.min(Math.max(300, parseInt(widthRaw, 10) || 495), 1000) : 495;
 
   if (!username || !repo) {
     return sendError(res, 400, 'Missing required query parameters: username, repo');
@@ -38,7 +40,7 @@ module.exports = async function handler(req, res) {
 
   try {
     const languages = await fetchLanguages(username, repo);
-    const svg = renderCard(languages, username, repo, resolvedTheme, langsCount);
+    const svg = renderCard(languages, username, repo, resolvedTheme, langsCount, cardWidth);
 
     res.writeHead(200, {
       'Content-Type':           'image/svg+xml',
@@ -132,7 +134,7 @@ function landingPage() {
       <h2>Usage</h2>
       <div class="code-block">/api?username={owner}&amp;repo={repo}</div>
       <p style="color:#8b949e;font-size:13px;">Embed in your README:</p>
-      <div class="code-block" style="color:#a5d6ff;">![Language Stats](https://your-domain.vercel.app/api?username=owner&amp;repo=repo)</div>
+      <div class="code-block" style="color:#a5d6ff;">![Language Stats](https://github-repository-language-graph-wi.vercel.app/api?username=owner&amp;repo=repo)</div>
     </div>
 
     <div class="section">
