@@ -1,0 +1,17 @@
+{
+  "name": "github-repository-language-graph",
+  "version": "1.0.0",
+  "description": "SVG widget for GitHub repository language statistics",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "private": true,
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
