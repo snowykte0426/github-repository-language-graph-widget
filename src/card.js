@@ -19,7 +19,7 @@ const THEMES = {
   },
 };
 
-const MAX_LANGS = 10;
+const HARD_MAX = 100;
 const WIDTH = 495;
 const PADDING = 25;
 const BAR_Y = 60;
@@ -29,12 +29,13 @@ const LEGEND_TOP = 90;
 const LEGEND_ROW_H = 25;
 const FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif";
 
-function renderCard(languages, owner, repo, theme = 'light') {
+function renderCard(languages, owner, repo, theme = 'light', langsCount = 20) {
   const t = THEMES[theme] || THEMES.light;
+  const limit = Math.min(Math.max(1, langsCount), HARD_MAX);
 
-  let displayLangs = languages.slice(0, MAX_LANGS);
-  if (languages.length > MAX_LANGS) {
-    const otherPct = languages.slice(MAX_LANGS).reduce((s, l) => s + l.percentage, 0);
+  let displayLangs = languages.slice(0, limit);
+  if (languages.length > limit) {
+    const otherPct = languages.slice(limit).reduce((s, l) => s + l.percentage, 0);
     displayLangs.push({ language: 'Other', percentage: otherPct, bytes: 0 });
   }
 
