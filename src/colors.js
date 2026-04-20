@@ -42,8 +42,20 @@ const LANGUAGE_COLORS = {
   Groovy:              '#4298b8',
   PowerShell:          '#012456',
   'Visual Basic .NET': '#945db7',
-  Assembly:            '#6E4C13',
-  Other:               '#8b949e',
+  Assembly:                    '#6E4C13',
+  Markdown:                    '#083fa1',
+  PLpgSQL:                     '#336790',
+  'OpenAPI Specification v2':  '#85ea2d',
+  'OpenAPI Specification v3':  '#6BA539',
+  YAML:                        '#cb171e',
+  JSON:                        '#292929',
+  TOML:                        '#9c4221',
+  XML:                         '#0060ac',
+  MDX:                         '#fcb32c',
+  HCL:                         '#844FBA',
+  Terraform:                   '#844FBA',
+  Bicep:                       '#519aba',
+  Other:                       '#8b949e',
 };
 
 const DEFAULT_COLOR = '#8b949e';
