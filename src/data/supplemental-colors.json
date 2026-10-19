@@ -1,0 +1,516 @@
+{
+  "ABNF": {
+    "color": "#ffd24f",
+    "source": "https://www.ietf.org/media/documents/ietf-logo.svg",
+    "reason": "Project-selected fallback: The IETF logo uses RGB 255,210,79; select its gold for this IETF-defined syntax or textual format. This is not a Linguist color.",
+    "reference": "https://www.rfc-editor.org/rfc/rfc5234"
+  },
+  "ASL": {
+    "color": "#00c7fd",
+    "source": "https://www.intel.com/content/dam/logos/intel-header-logo.svg",
+    "reason": "Project-selected fallback: Select the cyan fill in Intel's logo as the ecosystem color of its ACPICA ASL implementation. This is not a Linguist color.",
+    "reference": "https://www.intel.com/content/www/us/en/developer/topic-technology/open/acpica/overview.html"
+  },
+  "ASN.1": {
+    "color": "#004b96",
+    "source": "https://www.itu.int/ITU-T/asn1/",
+    "reason": "Project-selected fallback: The official ITU ASN.1 page uses this blue for its headings; select the standard's official site accent. This is not a Linguist color."
+  },
+  "Befunge": {
+    "color": "#128051",
+    "source": "https://catseye.tc/static/assets/stylesheet/chrysoberyl3.css",
+    "reason": "Project-selected fallback: The language author's Cat's Eye Technologies website uses this green for links. This is not a Linguist color.",
+    "reference": "https://catseye.tc/view/Befunge-93/doc/Befunge-93.markdown"
+  },
+  "Bend": {
+    "color": "#8b83b5",
+    "source": "https://bend-lang.com/",
+    "reason": "Project-selected fallback: the official language website defines #8b83b5 as its --vio CSS palette token; select that violet. This is not a Linguist color."
+  },
+  "BibTeX Style": {
+    "language": "BibTeX",
+    "source": "https://www.tug.org/bibtex/",
+    "reason": "Project-selected related-language fallback: BibTeX documentation identifies .bst files as BibTeX styles; reuse the BibTeX token. This is not an official color assignment for this format."
+  },
+  "C-ObjDump": {
+    "language": "C",
+    "source": "https://raw.githubusercontent.com/github-linguist/linguist/681a3171a3f8d1ccab93e646e7753cba42186915/lib/linguist/languages.yml",
+    "reason": "Project-selected related-language fallback: Linguist identifies these objdump variants by their language-specific extensions and assembly grammar; reuse the C token. This is not an official color assignment for this format."
+  },
+  "CIL": {
+    "language": "SELinux Policy",
+    "source": "https://github.com/SELinuxProject/cil",
+    "reason": "Project-selected related-language fallback: This Linguist entry is SELinux Common Intermediate Language, not .NET CIL; share the SELinux policy token. This is not an official color assignment for this format."
+  },
+  "COBOL": {
+    "color": "#622486",
+    "source": "https://gnucobol.sourceforge.io/layout.css",
+    "reason": "Project-selected fallback: Select the link accent of GnuCOBOL's official site as a representative COBOL implementation color; COBOL itself has no single brand. This is not a Linguist color."
+  },
+  "CODEOWNERS": {
+    "color": "#171515",
+    "source": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+    "reason": "Project-selected fallback: Select the dark foreground (RGB 23,21,21) of the GitHub mark for GitHub's CODEOWNERS format. This is not a Linguist color.",
+    "reference": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners"
+  },
+  "CartoCSS": {
+    "language": "CSS",
+    "source": "https://cartocss.readthedocs.io/en/latest/",
+    "reason": "Project-selected related-language fallback: CartoCSS describes its syntax as building on CSS; reuse the CSS token. This is not an official color assignment for this format."
+  },
+  "CoNLL-U": {
+    "color": "#729fcf",
+    "source": "https://universaldependencies.org/logos/logo-ud.png",
+    "reason": "Project-selected fallback: The dominant blue in the Universal Dependencies logo is RGB 114,159,207. This is not a Linguist color.",
+    "reference": "https://universaldependencies.org/format.html"
+  },
+  "Cpp-ObjDump": {
+    "language": "C++",
+    "source": "https://raw.githubusercontent.com/github-linguist/linguist/681a3171a3f8d1ccab93e646e7753cba42186915/lib/linguist/languages.yml",
+    "reason": "Project-selected related-language fallback: Linguist identifies these objdump variants by their language-specific extensions and assembly grammar; reuse the C++ token. This is not an official color assignment for this format."
+  },
+  "Cycript": {
+    "color": "#563d7c",
+    "source": "https://www.cycript.org/cycript.css",
+    "reason": "Project-selected fallback: The official Cycript stylesheet uses this purple for the active navigation marker and text. This is not a Linguist color."
+  },
+  "D-ObjDump": {
+    "language": "D",
+    "source": "https://raw.githubusercontent.com/github-linguist/linguist/681a3171a3f8d1ccab93e646e7753cba42186915/lib/linguist/languages.yml",
+    "reason": "Project-selected related-language fallback: Linguist identifies these objdump variants by their language-specific extensions and assembly grammar; reuse the D token. This is not an official color assignment for this format."
+  },
+  "DIGITAL Command Language": {
+    "color": "#2378ff",
+    "source": "https://vmssoftware.com/images/logo.svg",
+    "reason": "Project-selected fallback: The current OpenVMS maintainer's logo uses this blue; select it for OpenVMS DCL. This is not a Linguist color.",
+    "reference": "https://docs.vmssoftware.com/"
+  },
+  "DNS Zone": {
+    "color": "#ffd24f",
+    "source": "https://www.ietf.org/media/documents/ietf-logo.svg",
+    "reason": "Project-selected fallback: The IETF logo uses RGB 255,210,79; select its gold for this IETF-defined syntax or textual format. This is not a Linguist color.",
+    "reference": "https://www.rfc-editor.org/rfc/rfc1035"
+  },
+  "DTrace": {
+    "color": "#467c45",
+    "source": "https://dtrace.org/",
+    "reason": "Project-selected fallback: The DTrace community site uses this green as its link and heading accent. This is not a Linguist color."
+  },
+  "E-mail": {
+    "color": "#ffd24f",
+    "source": "https://www.ietf.org/media/documents/ietf-logo.svg",
+    "reason": "Project-selected fallback: The IETF logo uses RGB 255,210,79; select its gold for this IETF-defined syntax or textual format. This is not a Linguist color.",
+    "reference": "https://www.rfc-editor.org/rfc/rfc5322"
+  },
+  "Edje Data Collection": {
+    "color": "#3399ff",
+    "source": "https://www.enlightenment.org/",
+    "reason": "Project-selected fallback: Select the Enlightenment project website's blue accent for its Edje layout format. This is not a Linguist color."
+  },
+  "GDB": {
+    "color": "#cdcdcd",
+    "source": "https://sourceware.org/gdb/images/archer.svg",
+    "reason": "Project-selected fallback: The official Archer Fish mascot uses this gray body fill. This is not a Linguist color.",
+    "reference": "https://sourceware.org/gdb/mascot/"
+  },
+  "GN": {
+    "color": "#3275e7",
+    "source": "https://storage.googleapis.com/chrome-infra-public/logo/gn-logo.png",
+    "reason": "Project-selected fallback: Sampled the saturated blue face of the official GN logo (RGB 50,117,231). This is not a Linguist color.",
+    "reference": "https://gn.googlesource.com/gn/+/refs/heads/infra/config/luci-milo.cfg"
+  },
+  "Glyph Bitmap Distribution Format": {
+    "color": "#ed4f1a",
+    "source": "https://www.x.org/wiki/logo.png",
+    "reason": "Project-selected fallback: Select the orange accent (RGB 237,79,26) in the X.Org logo for this X Window System format. This is not a Linguist color.",
+    "reference": "https://www.x.org/releases/current/doc/xorg-docs/fonts/fonts.html"
+  },
+  "HyPhy": {
+    "color": "#68ca05",
+    "source": "https://www.hyphy.org/images/logo.png",
+    "reason": "Project-selected fallback: Sampled a recurring green leaf color (RGB 104,202,5) from the project's tree logo; the small raster logo has no published single brand token. This is not a Linguist color."
+  },
+  "Inform 7": {
+    "color": "#018e21",
+    "source": "https://ganelson.github.io/inform-website/assets/images/icon.png",
+    "reason": "Project-selected fallback: Sampled the recurring green (RGB 1,142,33) in the official Inform icon; selected one of its multiple logo colors. This is not a Linguist color."
+  },
+  "Ink": {
+    "color": "#000000",
+    "source": "https://www.inklestudios.com/ink/img/ink-logo.png",
+    "reason": "Project-selected fallback: The official ink wordmark uses black foreground. This is not a Linguist color.",
+    "reference": "https://www.inklestudios.com/ink/"
+  },
+  "Kickstart": {
+    "color": "#ee0000",
+    "source": "https://www.redhat.com/en/about/brand/standards/color",
+    "reason": "Project-selected fallback: Select the published Red Hat red for its Kickstart installation format. This is not a Linguist color.",
+    "reference": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/automatically_installing_rhel/index"
+  },
+  "Kit": {
+    "language": "HTML",
+    "source": "https://codekitapp.com/help/kit/",
+    "reason": "Project-selected related-language fallback: CodeKit defines Kit as HTML with special comments; reuse the HTML token. This is not an official color assignment for this format."
+  },
+  "Kusto": {
+    "color": "#03a5f0",
+    "source": "https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png",
+    "reason": "Project-selected fallback: Select the blue square (RGB 3,165,240) in Microsoft's official logo as an ecosystem fallback for its Kusto query language. This is not a Linguist color.",
+    "reference": "https://learn.microsoft.com/en-us/kusto/query/"
+  },
+  "LTspice Symbol": {
+    "color": "#0067b9",
+    "source": "https://wiki.analog.com/lib/tpl/analog2014/assets/images/adi-logo.svg",
+    "reason": "Project-selected fallback: Select the Analog Devices logo blue for its LTspice symbol format. This is not a Linguist color.",
+    "reference": "https://wiki.analog.com/resources/tools-software/ltspice"
+  },
+  "Lean": {
+    "color": "#070000",
+    "source": "https://lean-lang.org/static/svg/lean-logo-official-TM-transparent-2400x900.svg",
+    "reason": "Foreground fill of the official Lean logo, linked from https://lean-lang.org/logos/. Lean 4 inherits this via its Linguist group. This is a project-selected fallback, not a Linguist color."
+  },
+  "Limbo": {
+    "color": "#fc0000",
+    "source": "https://www.vitanuova.com/images/inf4e_banner_rhs.jpg",
+    "reason": "Project-selected fallback: Sampled the most frequent saturated red (RGB 252,0,0) within the Inferno wordmark on its maintainer's banner; Limbo is Inferno's application language. This is not a Linguist color.",
+    "reference": "https://www.vitanuova.com/inferno/limbo.html"
+  },
+  "Linear Programming": {
+    "color": "#0f62fe",
+    "source": "https://www.ibm.com/design/language/color/",
+    "reason": "Project-selected fallback: Select IBM Blue 60 as an ecosystem fallback for the CPLEX LP file format; this is not a universal mathematical notation color. This is not a Linguist color.",
+    "reference": "https://www.ibm.com/docs/en/icos/22.1.1?topic=constraints-reading-writing-lp-files"
+  },
+  "Linux Kernel Module": {
+    "color": "#ffd133",
+    "source": "https://www.kernel.org/theme/images/logos/tux.png",
+    "reason": "Project-selected fallback: Select the dominant yellow accent (RGB 255,209,51) in the Linux kernel site's Tux logo. This is not a Linguist color.",
+    "reference": "https://docs.kernel.org/admin-guide/module-signing.html"
+  },
+  "Logos": {
+    "color": "#9b5ae3",
+    "source": "https://theos.dev/assets/img/favicon.svg",
+    "reason": "Project-selected fallback: The Theos logo uses this purple fill; Logos is Theos's preprocessor language. This is not a Linguist color.",
+    "reference": "https://theos.dev/docs/logos"
+  },
+  "LoomScript": {
+    "color": "#70a7c7",
+    "source": "https://raw.githubusercontent.com/LoomSDK/LoomSDK/master/docs/examples/HelloQuad/assets/logo.png",
+    "reason": "Project-selected fallback: Sampled a blue face color (RGB 112,167,199) in the Loom SDK mascot bundled with its official examples. This is not a Linguist color."
+  },
+  "M": {
+    "color": "#3c176a",
+    "source": "https://yottadb.com/wp-content/uploads/2018/01/YottaDB_logo.svg",
+    "reason": "Project-selected fallback: Select the purple fill of YottaDB's official logo as a representative M implementation color; M itself has no single brand. This is not a Linguist color.",
+    "reference": "https://docs.yottadb.com/ProgrammersGuide/langfeat.html"
+  },
+  "Microsoft Developer Studio Project": {
+    "color": "#854cc7",
+    "source": "https://visualstudio.microsoft.com/wp-content/uploads/2019/02/BrandVisualStudioWin2019-2.svg",
+    "reason": "Project-selected fallback: Select the purple fill in Microsoft's Visual Studio logo for this Visual Studio project format. This is not a Linguist color."
+  },
+  "Microsoft Visual Studio Solution": {
+    "color": "#854cc7",
+    "source": "https://visualstudio.microsoft.com/wp-content/uploads/2019/02/BrandVisualStudioWin2019-2.svg",
+    "reason": "Project-selected fallback: Select the purple fill in Microsoft's Visual Studio logo for this Visual Studio project format. This is not a Linguist color."
+  },
+  "MiniZinc Data": {
+    "language": "MiniZinc",
+    "source": "https://docs.minizinc.dev/en/stable/modelling2.html",
+    "reason": "Project-selected related-language fallback: The MiniZinc manual defines .dzn data files for MiniZinc models; reuse the MiniZinc token. This is not an official color assignment for this format."
+  },
+  "Module Management System": {
+    "color": "#2378ff",
+    "source": "https://vmssoftware.com/images/logo.svg",
+    "reason": "Project-selected fallback: The OpenVMS maintainer's blue is used as an ecosystem fallback for DECset MMS. This is not a Linguist color.",
+    "reference": "https://docs.vmssoftware.com/"
+  },
+  "Muse": {
+    "language": "Emacs Lisp",
+    "source": "https://www.gnu.org/software/emacs-muse/",
+    "reason": "Project-selected related-language fallback: Emacs Muse is an authoring and publishing environment for Emacs; select the Emacs ecosystem token. This is not an official color assignment for this format."
+  },
+  "Myghty": {
+    "language": "Python",
+    "source": "https://pythonhosted.org/Myghty/documentation.html",
+    "reason": "Project-selected related-language fallback: Myghty documents its Python server page and template environment; select the Python ecosystem token. This is not an official color assignment for this format."
+  },
+  "NASL": {
+    "color": "#e7ff00",
+    "source": "https://www.tenable.com/themes/custom/tenable/images-new/favicons/tenable-favicon.svg",
+    "reason": "Project-selected fallback: Select the lime fill in the current Tenable icon for Nessus Attack Scripting Language. This is not a Linguist color.",
+    "reference": "https://docs.tenable.com/nessus/10_12/Content/AboutNessusPlugins.htm"
+  },
+  "NEON": {
+    "color": "#7ab402",
+    "source": "https://neon.nette.org/",
+    "reason": "Project-selected fallback: The NEON format's official site uses this green for its primary action button. This is not a Linguist color."
+  },
+  "NL": {
+    "language": "AMPL",
+    "source": "https://ampl.github.io/nlwrite.pdf",
+    "reason": "Project-selected related-language fallback: AMPL documents .nl as its solver interface format; share the AMPL token. This is not an official color assignment for this format."
+  },
+  "NSIS": {
+    "color": "#0395f9",
+    "source": "https://nsis.sourceforge.io/images/logo.gif",
+    "reason": "Project-selected fallback: Select a recurring saturated blue accent (RGB 3,149,249) in the official NSIS site logo; its raster image has multiple shaded colors. This is not a Linguist color."
+  },
+  "ObjDump": {
+    "language": "Assembly",
+    "source": "https://raw.githubusercontent.com/github-linguist/linguist/681a3171a3f8d1ccab93e646e7753cba42186915/lib/linguist/languages.yml",
+    "reason": "Project-selected related-language fallback: Linguist identifies these objdump variants by their language-specific extensions and assembly grammar; reuse the Assembly token. This is not an official color assignment for this format."
+  },
+  "Object Data Instance Notation": {
+    "color": "#258bb0",
+    "source": "https://openehr.org/",
+    "reason": "Project-selected fallback: Select the blue primary accent of openEHR for its ODIN format. This is not a Linguist color.",
+    "reference": "https://specifications.openehr.org/releases/LANG/latest/odin.html"
+  },
+  "Opa": {
+    "color": "#2294d2",
+    "source": "https://raw.githubusercontent.com/MLstate/opalang/master/tools/ms_windows/opa_pkg/opa_logo_72x72.ico",
+    "reason": "Project-selected fallback: Sampled the most frequent chromatic pixel (RGB 34,148,210) in the official Opa installer logo; the icon has a gradient. This is not a Linguist color."
+  },
+  "OpenStep Property List": {
+    "language": "XML Property List",
+    "source": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/PropertyLists/OldStylePlists/OldStylePLists.html",
+    "reason": "Project-selected related-language fallback: Apple documents this ASCII format as a member of the property list family; share the XML Property List token without treating the ASCII syntax as XML. This is not an official color assignment for this format."
+  },
+  "OpenType Feature File": {
+    "color": "#eb1000",
+    "source": "https://www.adobe.com/cc-shared/assets/img/product-icons/svg/adobe-corp-logo-2024.svg",
+    "reason": "Project-selected fallback: Select Adobe's red logo fill for the feature file specification maintained by Adobe Type Tools. This is not a Linguist color.",
+    "reference": "https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html"
+  },
+  "Ox": {
+    "color": "#f28500",
+    "source": "https://www.doornik.com/doc/style/oxedit_64x64.png",
+    "reason": "Project-selected fallback: The Ox author's official OxEdit icon has a dominant orange (RGB 242,133,0); select it for the Ox ecosystem. This is not a Linguist color."
+  },
+  "Pickle": {
+    "language": "Python",
+    "source": "https://docs.python.org/3/library/pickle.html",
+    "reason": "Project-selected related-language fallback: The Python standard library defines pickle as Python object serialization; reuse the Python token. This is not an official color assignment for this format."
+  },
+  "Pod": {
+    "language": "Perl",
+    "source": "https://perldoc.perl.org/perlpod",
+    "reason": "Project-selected related-language fallback: Perl documents Pod as its documentation markup; reuse the Perl token. This is not an official color assignment for this format."
+  },
+  "Pod 6": {
+    "language": "Raku",
+    "source": "https://docs.raku.org/language/pod",
+    "reason": "Project-selected related-language fallback: The Raku manual defines Rakudoc, formerly Pod6; reuse the Raku token. This is not an official color assignment for this format."
+  },
+  "Pony": {
+    "color": "#2b1100",
+    "source": "https://www.ponylang.io/assets/logo.png",
+    "reason": "Project-selected fallback: The dominant brown foreground in the official Pony logo is RGB 43,17,0. This is not a Linguist color."
+  },
+  "Proguard": {
+    "color": "#004f91",
+    "source": "https://www.guardsquare.com/proguard",
+    "reason": "Project-selected fallback: The maintainer's official ProGuard product page uses this blue link accent. This is not a Linguist color."
+  },
+  "Protocol Buffer": {
+    "color": "#ff3615",
+    "source": "https://protobuf.dev/favicons/android-chrome-512x512.png",
+    "reason": "Project-selected fallback: The official Protocol Buffers site icon uses this red foreground (RGB 255,54,21). This is not a Linguist color.",
+    "reference": "https://protobuf.dev/"
+  },
+  "Protocol Buffer Text Format": {
+    "language": "Protocol Buffer",
+    "source": "https://protobuf.dev/reference/protobuf/textformat-spec/",
+    "reason": "Project-selected related-language fallback: The Protocol Buffers documentation defines this text serialization; share its parent format token. This is not an official color assignment for this format."
+  },
+  "Public Key": {
+    "color": "#ffd24f",
+    "source": "https://www.ietf.org/media/documents/ietf-logo.svg",
+    "reason": "Project-selected fallback: The IETF logo uses RGB 255,210,79; select its gold for this IETF-defined syntax or textual format. This is not a Linguist color.",
+    "reference": "https://www.rfc-editor.org/rfc/rfc7468"
+  },
+  "Pure Data": {
+    "color": "#000000",
+    "source": "https://puredata.info/portal_css/Plone%20Default/logo.png",
+    "reason": "Project-selected fallback: Select the black foreground of the Pure Data community site's monochrome logo. This is not a Linguist color.",
+    "reference": "https://msp.ucsd.edu/software.html"
+  },
+  "QMake": {
+    "color": "#2CDE85",
+    "source": "https://www.qt.io/brand/development/brand-colors",
+    "reason": "Qt Development's primary Neon brand color, selected for Qt's qmake language. This is a project-selected fallback, not a Linguist color."
+  },
+  "REALbasic": {
+    "language": "Xojo",
+    "source": "https://documentation.xojo.com/getting_started/introduction/what_is_xojo.html",
+    "reason": "Project-selected related-language fallback: Xojo documents its previous name as REALbasic; share its current Linguist token. This is not an official color assignment for this format."
+  },
+  "RPC": {
+    "color": "#ffd24f",
+    "source": "https://www.ietf.org/media/documents/ietf-logo.svg",
+    "reason": "Project-selected fallback: The IETF logo uses RGB 255,210,79; select its gold for this IETF-defined syntax or textual format. This is not a Linguist color.",
+    "reference": "https://www.rfc-editor.org/rfc/rfc5531"
+  },
+  "RPM Spec": {
+    "color": "#9d151a",
+    "source": "https://rpm.org/stylesheets/style.css",
+    "reason": "Project-selected fallback: The RPM project stylesheet uses this red for links; select it for RPM spec files. This is not a Linguist color."
+  },
+  "Redirect Rules": {
+    "color": "#05bdba",
+    "source": "https://www.netlify.com/favicon/icon.svg",
+    "reason": "Project-selected fallback: Select the teal fill in Netlify's official icon for its _redirects file syntax. This is not a Linguist color.",
+    "reference": "https://docs.netlify.com/manage/routing/redirects/overview/"
+  },
+  "RenderScript": {
+    "color": "#3ddc84",
+    "source": "https://developer.android.com/distribute/marketing-tools/brand-guidelines",
+    "reason": "Project-selected fallback: Select Android's published green for this Android-specific language or build format. This is not a Linguist color."
+  },
+  "Rich Text Format": {
+    "color": "#03a5f0",
+    "source": "https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png",
+    "reason": "Project-selected fallback: Select the blue square (RGB 3,165,240) in Microsoft's official logo as an ecosystem fallback for its RTF format. This is not a Linguist color.",
+    "reference": "https://learn.microsoft.com/en-us/openspecs/exchange_server_protocols/ms-oxrtfex/"
+  },
+  "Robots Exclusion Rules": {
+    "color": "#ffd24f",
+    "source": "https://www.ietf.org/media/documents/ietf-logo.svg",
+    "reason": "Project-selected fallback: The IETF logo uses RGB 255,210,79; select its gold for this IETF-defined syntax or textual format. This is not a Linguist color.",
+    "reference": "https://www.rfc-editor.org/rfc/rfc9309"
+  },
+  "SELinux Policy": {
+    "color": "#f09c42",
+    "source": "https://github.com/SELinuxProject.png",
+    "reason": "Project-selected fallback: Select the recurring orange accent (RGB 240,156,66) in the SELinux project's penguin mascot. This is not a Linguist color.",
+    "reference": "https://github.com/SELinuxProject/selinux"
+  },
+  "SWIG": {
+    "color": "#000000",
+    "source": "https://www.swig.org/images/swig17.png",
+    "reason": "Project-selected fallback: Select the black field of the official SWIG site's monochrome logo; no chromatic brand token is asserted. This is not a Linguist color."
+  },
+  "Sage": {
+    "color": "#3131ff",
+    "source": "https://github.com/sagemath/artwork/blob/master/sage-logo-2018.svg",
+    "reason": "Blue fill in the official SageMath logo. This is a project-selected fallback, not a Linguist color."
+  },
+  "ShellSession": {
+    "language": "Shell",
+    "source": "https://raw.githubusercontent.com/github-linguist/linguist/681a3171a3f8d1ccab93e646e7753cba42186915/lib/linguist/languages.yml",
+    "reason": "Project-selected related-language fallback: Linguist explicitly associates shell-session files with the shell grammar and bash session alias; reuse the Shell token. This is not an official color assignment for this format."
+  },
+  "Sieve": {
+    "color": "#ffd24f",
+    "source": "https://www.ietf.org/media/documents/ietf-logo.svg",
+    "reason": "Project-selected fallback: The IETF logo uses RGB 255,210,79; select its gold for this IETF-defined syntax or textual format. This is not a Linguist color.",
+    "reference": "https://www.rfc-editor.org/rfc/rfc5228"
+  },
+  "Smali": {
+    "color": "#3ddc84",
+    "source": "https://developer.android.com/distribute/marketing-tools/brand-guidelines",
+    "reason": "Project-selected fallback: Select Android's published green for this Android-specific language or build format. This is not a Linguist color."
+  },
+  "Soong": {
+    "color": "#3ddc84",
+    "source": "https://developer.android.com/distribute/marketing-tools/brand-guidelines",
+    "reason": "Project-selected fallback: Select Android's published green for this Android-specific language or build format. This is not a Linguist color."
+  },
+  "Spline Font Database": {
+    "color": "#ff5900",
+    "source": "https://fontforge.org/assets/img/logo-transparent.png",
+    "reason": "Project-selected fallback: The FontForge logo contains this recurring orange (RGB 255,89,0); SFD is FontForge's native format. This is not a Linguist color.",
+    "reference": "https://fontforge.org/docs/techref/sfdformat.html"
+  },
+  "Tape": {
+    "color": "#6b50ff",
+    "source": "https://user-images.githubusercontent.com/42545625/198402537-12ca2f6c-0779-4eb8-a67c-8db9cb3df13c.png",
+    "reason": "Project-selected fallback: Select the dominant purple (RGB 107,80,255) in the VHS artwork used by its official README. This is not a Linguist color.",
+    "reference": "https://github.com/charmbracelet/vhs"
+  },
+  "Tea": {
+    "language": "Java",
+    "source": "https://github.com/teatrove/teatrove/wiki/Tea-User-Manual",
+    "reason": "Project-selected related-language fallback: The official manual defines Tea templates as compiled Java classes running on the JVM; select the Java ecosystem token. This is not an official color assignment for this format."
+  },
+  "Texinfo": {
+    "language": "TeX",
+    "source": "https://www.gnu.org/software/texinfo/",
+    "reason": "Project-selected related-language fallback: GNU documents texinfo.tex as the macro file that uses TeX to typeset Texinfo; select the TeX ecosystem token. This is not an official color assignment for this format."
+  },
+  "Turtle": {
+    "color": "#005a9c",
+    "source": "https://www.w3.org/cms-uploads/w3c-brand-standards-2025-10.pdf",
+    "reason": "Project-selected fallback: Select W3C's published primary blue for this W3C specification. This is not a Linguist color.",
+    "reference": "https://www.w3.org/TR/turtle/"
+  },
+  "Type Language": {
+    "color": "#38aeeb",
+    "source": "https://core.telegram.org/img/website_icon.svg?4",
+    "reason": "Project-selected fallback: The official Telegram icon uses this blue gradient stop; TL defines Telegram's schema. This is not a Linguist color.",
+    "reference": "https://core.telegram.org/schema"
+  },
+  "WebIDL": {
+    "color": "#3c790a",
+    "source": "https://webidl.spec.whatwg.org/",
+    "reason": "Project-selected fallback: The current WHATWG Web IDL standard declares this green theme color. This is not a Linguist color."
+  },
+  "WebVTT": {
+    "color": "#005a9c",
+    "source": "https://www.w3.org/cms-uploads/w3c-brand-standards-2025-10.pdf",
+    "reason": "Project-selected fallback: Select W3C's published primary blue for this W3C specification. This is not a Linguist color.",
+    "reference": "https://www.w3.org/TR/webvtt1/"
+  },
+  "Win32 Message File": {
+    "color": "#03a5f0",
+    "source": "https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png",
+    "reason": "Project-selected fallback: Select the blue square (RGB 3,165,240) in Microsoft's official logo for this Windows resource format. This is not a Linguist color.",
+    "reference": "https://learn.microsoft.com/en-us/windows/win32/wes/message-compiler--mc-exe-"
+  },
+  "X Font Directory Index": {
+    "color": "#ed4f1a",
+    "source": "https://www.x.org/wiki/logo.png",
+    "reason": "Project-selected fallback: Select the orange accent (RGB 237,79,26) in the X.Org logo for this X Window System format. This is not a Linguist color.",
+    "reference": "https://www.x.org/releases/current/doc/xorg-docs/fonts/fonts.html"
+  },
+  "XCompose": {
+    "color": "#ed4f1a",
+    "source": "https://www.x.org/wiki/logo.png",
+    "reason": "Project-selected fallback: Select the orange accent (RGB 237,79,26) in the X.Org logo for this X Window System format. This is not a Linguist color.",
+    "reference": "https://www.x.org/releases/current/doc/man/man5/Compose.5.xhtml"
+  },
+  "XPages": {
+    "language": "XML",
+    "source": "https://help.hcl-software.com/dom_designer/14.5.0/xpageuser/wpd_overview_xpages.html",
+    "reason": "Project-selected related-language fallback: HCL documents XPages as XML-based applications; select the XML ecosystem token. This is not an official color assignment for this format."
+  },
+  "XProc": {
+    "color": "#7c96cd",
+    "source": "https://xproc.org/img/logo.png",
+    "reason": "Project-selected fallback: The dominant blue in the official XProc logo is RGB 124,150,205. This is not a Linguist color.",
+    "reference": "https://xproc.org/"
+  },
+  "XS": {
+    "language": "Perl",
+    "source": "https://perldoc.perl.org/perlxs",
+    "reason": "Project-selected related-language fallback: Perl documents XS as its native extension interface language; reuse the Perl token. This is not an official color assignment for this format."
+  },
+  "YANG": {
+    "color": "#ffd24f",
+    "source": "https://www.ietf.org/media/documents/ietf-logo.svg",
+    "reason": "Project-selected fallback: The IETF logo uses RGB 255,210,79; select its gold for this IETF-defined syntax or textual format. This is not a Linguist color.",
+    "reference": "https://www.rfc-editor.org/rfc/rfc7950"
+  },
+  "Zeek": {
+    "color": "#06a8e1",
+    "source": "https://zeek.org/wp-content/themes/zeek/resources/images/logo.png",
+    "reason": "Project-selected fallback: The most frequent chromatic pixel in the official Zeek logo is RGB 6,168,225. This is not a Linguist color.",
+    "reference": "https://zeek.org/2020/03/announcing-the-new-zeek-website/"
+  },
+  "edn": {
+    "language": "Clojure",
+    "source": "https://github.com/edn-format/edn",
+    "reason": "Project-selected related-language fallback: The edn specification identifies Clojure forms as a superset of edn; select the Clojure ecosystem token. This is not an official color assignment for this format."
+  }
+}

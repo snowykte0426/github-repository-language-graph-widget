@@ -1,67 +1,50 @@
 'use strict';
 
-const LANGUAGE_COLORS = {
-  JavaScript:          '#f1e05a',
-  TypeScript:          '#3178c6',
-  Python:              '#3572A5',
-  Java:                '#b07219',
-  'C++':               '#f34b7d',
-  C:                   '#555555',
-  'C#':                '#178600',
-  Go:                  '#00ADD8',
-  Rust:                '#dea584',
-  Ruby:                '#701516',
-  PHP:                 '#4F5D95',
-  Swift:               '#F05138',
-  Kotlin:              '#A97BFF',
-  Scala:               '#c22d40',
-  Shell:               '#89e051',
-  HTML:                '#e34c26',
-  CSS:                 '#563d7c',
-  SCSS:                '#c6538c',
-  Vue:                 '#41b883',
-  Svelte:              '#ff3e00',
-  Dart:                '#00B4AB',
-  Lua:                 '#000080',
-  Haskell:             '#5e5086',
-  Elixir:              '#6e4a7e',
-  Erlang:              '#B83998',
-  Clojure:             '#db5855',
-  'F#':                '#b845fc',
-  R:                   '#198CE7',
-  MATLAB:              '#e16737',
-  Perl:                '#0298c3',
-  'Objective-C':       '#438eff',
-  Dockerfile:          '#384d54',
-  Makefile:            '#427819',
-  Nix:                 '#7e7eff',
-  Zig:                 '#ec915c',
-  OCaml:               '#3be133',
-  'Jupyter Notebook':  '#DA5B0B',
-  CoffeeScript:        '#244776',
-  Groovy:              '#4298b8',
-  PowerShell:          '#012456',
-  'Visual Basic .NET': '#945db7',
-  Assembly:                    '#6E4C13',
-  Markdown:                    '#083fa1',
-  PLpgSQL:                     '#336790',
-  'OpenAPI Specification v2':  '#85ea2d',
-  'OpenAPI Specification v3':  '#6BA539',
-  YAML:                        '#cb171e',
-  JSON:                        '#292929',
-  TOML:                        '#9c4221',
-  XML:                         '#0060ac',
-  MDX:                         '#fcb32c',
-  HCL:                         '#844FBA',
-  Terraform:                   '#844FBA',
-  Bicep:                       '#519aba',
-  Other:                       '#8b949e',
-};
+const linguist = require('./data/linguist-colors.json');
+const supplemental = require('./data/supplemental-colors.json');
 
 const DEFAULT_COLOR = '#8b949e';
+const LANGUAGE_COLORS = Object.create(null);
+const languageNames = new Map();
+
+function resolveColor(language, seen = new Set()) {
+  if (seen.has(language)) return DEFAULT_COLOR;
+  seen.add(language);
+
+  // An upstream color always takes precedence over a local supplement.
+  if (Object.hasOwn(linguist.colors, language) && linguist.colors[language]) {
+    return linguist.colors[language];
+  }
+  if (Object.hasOwn(supplemental, language)) {
+    const token = supplemental[language];
+    if (token.color) return token.color;
+    if (token.language) return resolveColor(token.language, seen);
+  }
+  if (Object.hasOwn(linguist.groups, language)) {
+    return resolveColor(linguist.groups[language], seen);
+  }
+  return DEFAULT_COLOR;
+}
+
+const languages = new Set([...Object.keys(linguist.colors), ...Object.keys(supplemental)]);
+for (const language of languages) {
+  LANGUAGE_COLORS[language] = resolveColor(language);
+  languageNames.set(language.toLowerCase(), language);
+}
+
+for (const [alias, language] of Object.entries(linguist.aliases)) {
+  languageNames.set(alias.toLowerCase(), language);
+}
+
+// Preserve the existing public mapping as well as Linguist's lowercase alias.
+LANGUAGE_COLORS.Terraform = LANGUAGE_COLORS.HCL;
+LANGUAGE_COLORS.Other = DEFAULT_COLOR;
+Object.freeze(LANGUAGE_COLORS);
 
 function getColor(language) {
-  return LANGUAGE_COLORS[language] || DEFAULT_COLOR;
+  if (typeof language !== 'string') return DEFAULT_COLOR;
+  const canonical = languageNames.get(language.trim().toLowerCase());
+  return canonical ? LANGUAGE_COLORS[canonical] : DEFAULT_COLOR;
 }
 
 module.exports = { LANGUAGE_COLORS, DEFAULT_COLOR, getColor };
