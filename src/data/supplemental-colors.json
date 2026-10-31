@@ -58,16 +58,44 @@
     "source": "https://cartocss.readthedocs.io/en/latest/",
     "reason": "Project-selected related-language fallback: CartoCSS describes its syntax as building on CSS; reuse the CSS token. This is not an official color assignment for this format."
   },
+  "Charity": {
+    "color": "#ffcd00",
+    "source": "https://haskayne.ucalgary.ca/brand/standards/colours",
+    "reason": "The University of Calgary implemented Charity. We use its gold to represent the language.",
+    "reference": "https://ksi.cpsc.ucalgary.ca/SERN/ChairMandate.html"
+  },
+  "Checksums": {
+    "color": "#90a959",
+    "source": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/config.cson#L6597",
+    "reason": "We use the green that the Atom file-icons theme assigns to checksum files.",
+    "reference": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/styles/colours.less"
+  },
   "CoNLL-U": {
     "color": "#729fcf",
     "source": "https://universaldependencies.org/logos/logo-ud.png",
     "reason": "Project-selected fallback: The dominant blue in the Universal Dependencies logo is RGB 114,159,207. This is not a Linguist color.",
     "reference": "https://universaldependencies.org/format.html"
   },
+  "Cool": {
+    "color": "#8c1515",
+    "source": "https://identity.stanford.edu/design-elements/color/primary-colors/",
+    "reason": "We use Cardinal Red from Stanford, where the author hosts the Cool compiler course materials.",
+    "reference": "https://theory.stanford.edu/~aiken/software/cool/cool.html"
+  },
   "Cpp-ObjDump": {
     "language": "C++",
     "source": "https://raw.githubusercontent.com/github-linguist/linguist/681a3171a3f8d1ccab93e646e7753cba42186915/lib/linguist/languages.yml",
     "reason": "Project-selected related-language fallback: Linguist identifies these objdump variants by their language-specific extensions and assembly grammar; reuse the C++ token. This is not an official color assignment for this format."
+  },
+  "Creole": {
+    "language": "Wikitext",
+    "source": "https://wikicreole.org/",
+    "reason": "Creole is a markup language for wikis. We share the Wikitext token for that family of formats."
+  },
+  "Cue Sheet": {
+    "color": "#8064b1",
+    "source": "https://github.com/github-linguist/linguist/blob/681a3171a3f8d1ccab93e646e7753cba42186915/samples/Cue%20Sheet/sample1.cue",
+    "reason": "We chose a violet inspired by the sheen of a disc for cue sheets that index audio tracks."
   },
   "Cycript": {
     "color": "#563d7c",
@@ -96,16 +124,38 @@
     "source": "https://dtrace.org/",
     "reason": "Project-selected fallback: The DTrace community site uses this green as its link and heading accent. This is not a Linguist color."
   },
+  "Diff": {
+    "color": "#d28445",
+    "source": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/config.cson#L2070",
+    "reason": "We use the orange that the Atom file-icons theme assigns to unified diff files.",
+    "reference": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/styles/colours.less"
+  },
   "E-mail": {
     "color": "#ffd24f",
     "source": "https://www.ietf.org/media/documents/ietf-logo.svg",
     "reason": "Project-selected fallback: The IETF logo uses RGB 255,210,79; select its gold for this IETF-defined syntax or textual format. This is not a Linguist color.",
     "reference": "https://www.rfc-editor.org/rfc/rfc5322"
   },
+  "EBNF": {
+    "color": "#ac4142",
+    "source": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/config.cson#L3077",
+    "reason": "We use the red that the Atom file-icons theme assigns to Extended Backus-Naur Form grammar files.",
+    "reference": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/styles/colours.less"
+  },
+  "Eagle": {
+    "color": "#b87333",
+    "source": "https://github.com/github-linguist/linguist/blob/681a3171a3f8d1ccab93e646e7753cba42186915/samples/Eagle/Eagle.brd",
+    "reason": "We chose copper to represent the conductive traces in EAGLE circuit board designs."
+  },
   "Edje Data Collection": {
     "color": "#3399ff",
     "source": "https://www.enlightenment.org/",
     "reason": "Project-selected fallback: Select the Enlightenment project website's blue accent for its Edje layout format. This is not a Linguist color."
+  },
+  "Formatted": {
+    "color": "#408784",
+    "source": "https://github.com/github-linguist/linguist/blob/681a3171a3f8d1ccab93e646e7753cba42186915/samples/Formatted/wksst8110.for",
+    "reason": "We chose an ocean teal inspired by the sea surface temperature table in the Linguist examples."
   },
   "GDB": {
     "color": "#cdcdcd",
@@ -119,16 +169,32 @@
     "reason": "Project-selected fallback: Sampled the saturated blue face of the official GN logo (RGB 50,117,231). This is not a Linguist color.",
     "reference": "https://gn.googlesource.com/gn/+/refs/heads/infra/config/luci-milo.cfg"
   },
+  "Gettext Catalog": {
+    "color": "#1595e0",
+    "source": "https://poedit.net/favicon.svg",
+    "reason": "We use a blue fill from the Poedit icon for the gettext catalogs that it edits.",
+    "reference": "https://poedit.net/"
+  },
   "Glyph Bitmap Distribution Format": {
     "color": "#ed4f1a",
     "source": "https://www.x.org/wiki/logo.png",
     "reason": "Project-selected fallback: Select the orange accent (RGB 237,79,26) in the X.Org logo for this X Window System format. This is not a Linguist color.",
     "reference": "https://www.x.org/releases/current/doc/xorg-docs/fonts/fonts.html"
   },
+  "Graph Modeling Language": {
+    "language": "Graphviz (DOT)",
+    "source": "https://graphviz.org/docs/cli/gml2gv/",
+    "reason": "Graphviz supplies gml2gv to convert GML graphs to DOT. We share its graph format token."
+  },
   "HyPhy": {
     "color": "#68ca05",
     "source": "https://www.hyphy.org/images/logo.png",
     "reason": "Project-selected fallback: Sampled a recurring green leaf color (RGB 104,202,5) from the project's tree logo; the small raster logo has no published single brand token. This is not a Linguist color."
+  },
+  "IRC log": {
+    "color": "#00b5b5",
+    "source": "https://modern.ircdocs.horse/formatting#colors-16-98",
+    "reason": "We chose cyan number 46 from the extended IRC palette for chat logs."
   },
   "Inform 7": {
     "color": "#018e21",
@@ -181,6 +247,11 @@
     "reason": "Project-selected fallback: Select IBM Blue 60 as an ecosystem fallback for the CPLEX LP file format; this is not a universal mathematical notation color. This is not a Linguist color.",
     "reference": "https://www.ibm.com/docs/en/icos/22.1.1?topic=constraints-reading-writing-lp-files"
   },
+  "Linker Script": {
+    "language": "LLVM",
+    "source": "https://lld.llvm.org/ELF/linker_script.html",
+    "reason": "LLVM provides the LLD linker, which supports GNU-style linker scripts. We share the LLVM toolchain token."
+  },
   "Linux Kernel Module": {
     "color": "#ffd133",
     "source": "https://www.kernel.org/theme/images/logos/tux.png",
@@ -204,6 +275,12 @@
     "reason": "Project-selected fallback: Select the purple fill of YottaDB's official logo as a representative M implementation color; M itself has no single brand. This is not a Linguist color.",
     "reference": "https://docs.yottadb.com/ProgrammersGuide/langfeat.html"
   },
+  "M4": {
+    "color": "#a32d2a",
+    "source": "https://www.gnu.org/layout.min.css",
+    "reason": "We use the banner red from the GNU M4 website. M4Sugar inherits this token through its Linguist group.",
+    "reference": "https://www.gnu.org/software/m4/"
+  },
   "Microsoft Developer Studio Project": {
     "color": "#854cc7",
     "source": "https://visualstudio.microsoft.com/wp-content/uploads/2019/02/BrandVisualStudioWin2019-2.svg",
@@ -213,6 +290,11 @@
     "color": "#854cc7",
     "source": "https://visualstudio.microsoft.com/wp-content/uploads/2019/02/BrandVisualStudioWin2019-2.svg",
     "reason": "Project-selected fallback: Select the purple fill in Microsoft's Visual Studio logo for this Visual Studio project format. This is not a Linguist color."
+  },
+  "MiniD": {
+    "language": "D",
+    "source": "https://forum.dlang.org/thread/f8p7r7%241dau%241%40digitalmars.com",
+    "reason": "The author describes MiniD as an embeddable language written in D. We share the D token."
   },
   "MiniZinc Data": {
     "language": "MiniZinc",
@@ -224,6 +306,16 @@
     "source": "https://vmssoftware.com/images/logo.svg",
     "reason": "Project-selected fallback: The OpenVMS maintainer's blue is used as an ecosystem fallback for DECset MMS. This is not a Linguist color.",
     "reference": "https://docs.vmssoftware.com/"
+  },
+  "Monkey": {
+    "color": "#a08354",
+    "source": "https://raw.githubusercontent.com/blitz-research/monkey/48d75ed758a1b5de610a1d7d674b8bef69c9b4a9/docs/templates/blitzmunter/data/monkey32.png",
+    "reason": "We use a recurring brown from the Monkey icon shipped with the language documentation."
+  },
+  "Moocode": {
+    "color": "#b98232",
+    "source": "https://github.com/wrog/lambdamoo",
+    "reason": "We chose amber to evoke the text terminals used to interact with a LambdaMOO world."
   },
   "Muse": {
     "language": "Emacs Lisp",
@@ -255,6 +347,18 @@
     "color": "#0395f9",
     "source": "https://nsis.sourceforge.io/images/logo.gif",
     "reason": "Project-selected fallback: Select a recurring saturated blue accent (RGB 3,149,249) in the official NSIS site logo; its raster image has multiple shaded colors. This is not a Linguist color."
+  },
+  "Ninja": {
+    "color": "#6a9fb5",
+    "source": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/config.cson#L4768",
+    "reason": "We use the blue that the Atom file-icons theme assigns to Ninja build files.",
+    "reference": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/styles/colours.less"
+  },
+  "Oberon": {
+    "color": "#aa759f",
+    "source": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/config.cson#L4933",
+    "reason": "We use the purple that the Atom file-icons theme assigns to Oberon source files.",
+    "reference": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/styles/colours.less"
   },
   "ObjDump": {
     "language": "Assembly",
@@ -357,6 +461,16 @@
     "source": "https://rpm.org/stylesheets/style.css",
     "reason": "Project-selected fallback: The RPM project stylesheet uses this red for links; select it for RPM spec files. This is not a Linguist color."
   },
+  "Raw token data": {
+    "color": "#a57835",
+    "source": "https://github.com/github-linguist/linguist/blob/681a3171a3f8d1ccab93e646e7753cba42186915/lib/linguist/languages.yml#L6748-L6756",
+    "reason": "We chose ochre to distinguish raw token streams from plain text and formatted data."
+  },
+  "Redcode": {
+    "color": "#cb3f49",
+    "source": "https://github.com/github-linguist/linguist/blob/681a3171a3f8d1ccab93e646e7753cba42186915/lib/linguist/languages.yml#L6837-L6843",
+    "reason": "We chose crimson as a mnemonic for the name Redcode."
+  },
   "Redirect Rules": {
     "color": "#05bdba",
     "source": "https://www.netlify.com/favicon/icon.svg",
@@ -385,6 +499,17 @@
     "source": "https://github.com/SELinuxProject.png",
     "reason": "Project-selected fallback: Select the recurring orange accent (RGB 240,156,66) in the SELinux project's penguin mascot. This is not a Linguist color.",
     "reference": "https://github.com/SELinuxProject/selinux"
+  },
+  "SMT": {
+    "color": "#207ea5",
+    "source": "https://smt-lib.org/style.css",
+    "reason": "We use the blue link accent on the SMT-LIB website.",
+    "reference": "https://smt-lib.org/"
+  },
+  "STAR": {
+    "color": "#8566ad",
+    "source": "https://www.iucr.org/__data/iucr/cif/standard/cifstd4.html",
+    "reason": "We chose amethyst to reflect the use of STAR in crystallography."
   },
   "SWIG": {
     "color": "#000000",
@@ -423,6 +548,11 @@
     "reason": "Project-selected fallback: The FontForge logo contains this recurring orange (RGB 255,89,0); SFD is FontForge's native format. This is not a Linguist color.",
     "reference": "https://fontforge.org/docs/techref/sfdformat.html"
   },
+  "TSPLIB data": {
+    "color": "#16866f",
+    "source": "https://doi.org/10.1287/ijoc.3.4.376",
+    "reason": "We chose a trail green to represent tours through the benchmark cities."
+  },
   "Tape": {
     "color": "#6b50ff",
     "source": "https://user-images.githubusercontent.com/42545625/198402537-12ca2f6c-0779-4eb8-a67c-8db9cb3df13c.png",
@@ -439,6 +569,11 @@
     "source": "https://www.gnu.org/software/texinfo/",
     "reason": "Project-selected related-language fallback: GNU documents texinfo.tex as the macro file that uses TeX to typeset Texinfo; select the TeX ecosystem token. This is not an official color assignment for this format."
   },
+  "Text": {
+    "color": "#566c82",
+    "source": "https://www.rfc-editor.org/rfc/rfc2046#section-4.1.3",
+    "reason": "We chose an ink blue for plain text so that it remains distinct from the gray reserved for Other."
+  },
   "Turtle": {
     "color": "#005a9c",
     "source": "https://www.w3.org/cms-uploads/w3c-brand-standards-2025-10.pdf",
@@ -450,6 +585,18 @@
     "source": "https://core.telegram.org/img/website_icon.svg?4",
     "reason": "Project-selected fallback: The official Telegram icon uses this blue gradient stop; TL defines Telegram's schema. This is not a Linguist color.",
     "reference": "https://core.telegram.org/schema"
+  },
+  "Wavefront Material": {
+    "color": "#46788d",
+    "source": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/config.cson#L4459",
+    "reason": "We use the dark blue that the Atom file-icons theme assigns to Wavefront material libraries.",
+    "reference": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/styles/colours.less"
+  },
+  "Wavefront Object": {
+    "color": "#ac4142",
+    "source": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/config.cson#L4458",
+    "reason": "We use the red that the Atom file-icons theme assigns to Wavefront geometry files.",
+    "reference": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/styles/colours.less"
   },
   "WebIDL": {
     "color": "#3c790a",
@@ -507,6 +654,12 @@
     "source": "https://zeek.org/wp-content/themes/zeek/resources/images/logo.png",
     "reason": "Project-selected fallback: The most frequent chromatic pixel in the official Zeek logo is RGB 6,168,225. This is not a Linguist color.",
     "reference": "https://zeek.org/2020/03/announcing-the-new-zeek-website/"
+  },
+  "dircolors": {
+    "color": "#90a959",
+    "source": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/config.cson#L6169",
+    "reason": "We use the green that the Atom file-icons theme assigns to dircolors configuration files.",
+    "reference": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/styles/colours.less"
   },
   "edn": {
     "language": "Clojure",
