@@ -16,6 +16,20 @@
     "source": "https://www.itu.int/ITU-T/asn1/",
     "reason": "Project-selected fallback: The official ITU ASN.1 page uses this blue for its headings; select the standard's official site accent. This is not a Linguist color."
   },
+  "Aheui": {
+    "color": "#0026ff",
+    "aliases": ["아희"],
+    "extensions": [".aheui"],
+    "source": "https://raw.githubusercontent.com/aheui/aheui.github.io/08609389451a854e2c5322c321d5ccd44645da85/logo.png",
+    "reason": "We use the blue from the Aheui project's Hangul logo.",
+    "reference": "https://github.com/aheui/aheui.aheui"
+  },
+  "ArnoldC": {
+    "color": "#526778",
+    "extensions": [".arnoldc"],
+    "source": "https://lhartikk.github.io/ArnoldC/",
+    "reason": "We chose steel blue for this language built from Schwarzenegger movie quotes."
+  },
   "Befunge": {
     "color": "#128051",
     "source": "https://catseye.tc/static/assets/stylesheet/chrysoberyl3.css",
@@ -69,6 +83,20 @@
     "source": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/config.cson#L6597",
     "reason": "We use the green that the Atom file-icons theme assigns to checksum files.",
     "reference": "https://github.com/file-icons/atom/blob/fa4bc4850eb5bbc0d192c127fb4be10af3f049b2/styles/colours.less"
+  },
+  "Chef": {
+    "color": "#418551",
+    "extensions": [".chef"],
+    "source": "https://www.dangermouse.net/esoteric/chef.html",
+    "reason": "We chose a herb green for Chef programs written as recipes.",
+    "reference": "https://github.com/stephenfmann/cooking-with-python/tree/feb03895671a6ab0aeef7d943a06241fffe8a765/recipes"
+  },
+  "Chicken": {
+    "color": "#ac790a",
+    "extensions": [".chicken", ".chic"],
+    "source": "https://github.com/kbmackenzie/chicken-chicken/tree/f0c12fa76a33d82c9fdb6c4e858bc594c5234c2a/test/chicken",
+    "reason": "We chose yolk gold for the language that uses chicken as its only word.",
+    "reference": "https://github.com/ashis0013/Chicken-Esolang-Interpreter/tree/4641cad1ef61664e5f48a6916a8349a7d7d71678/progs"
   },
   "CoNLL-U": {
     "color": "#729fcf",
@@ -190,6 +218,14 @@
     "color": "#68ca05",
     "source": "https://www.hyphy.org/images/logo.png",
     "reason": "Project-selected fallback: Sampled a recurring green leaf color (RGB 104,202,5) from the project's tree logo; the small raster logo has no published single brand token. This is not a Linguist color."
+  },
+  "Hyeo-ung": {
+    "color": "#be397a",
+    "aliases": ["혀엉", "Hyeong"],
+    "extensions": [".hyeong"],
+    "source": "https://gist.github.com/xnuk/d9f883ede568d97caa158255e4b4d069",
+    "reason": "We chose raspberry pink for the heart symbols used in the language.",
+    "reference": "https://github.com/buttercrab/hyeo-ung-lang/tree/a437326be13af4c43ffbba92b8f0860670ca6670/examples"
   },
   "IRC log": {
     "color": "#00b5b5",
@@ -665,5 +701,12 @@
     "language": "Clojure",
     "source": "https://github.com/edn-format/edn",
     "reason": "Project-selected related-language fallback: The edn specification identifies Clojure forms as a superset of edn; select the Clojure ecosystem token. This is not an official color assignment for this format."
+  },
+  "umjunsik-lang": {
+    "color": "#e36b35",
+    "aliases": ["엄랭"],
+    "extensions": [".umm"],
+    "source": "https://github.com/rycont/umjunsik-lang",
+    "reason": "We chose orange for the widget to distinguish umjunsik-lang from the blue Aheui logo."
   }
 }

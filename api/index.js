@@ -124,7 +124,7 @@ function landingPage() {
 <body>
   <div class="container">
     <h1>GitHub Repository Language Graph</h1>
-    <p class="subtitle">SVG language statistics widget for a specific GitHub repository — embed in any README.</p>
+    <p class="subtitle">SVG language statistics for a GitHub repository, with automatic detection of umjunsik-lang, Aheui, Hyeo-ung, ArnoldC, Chef and Chicken.</p>
 
     <div class="preview">
       <img src="/api?username=vercel&repo=next.js&theme=dark" alt="Language stats for vercel/next.js" />

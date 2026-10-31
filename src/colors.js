@@ -36,15 +36,29 @@ for (const [alias, language] of Object.entries(linguist.aliases)) {
   languageNames.set(alias.toLowerCase(), language);
 }
 
+for (const [language, token] of Object.entries(supplemental)) {
+  for (const alias of token.aliases || []) {
+    const key = alias.toLowerCase();
+    if (!languageNames.has(key)) languageNames.set(key, language);
+  }
+}
+
 // Preserve the existing public mapping as well as Linguist's lowercase alias.
 LANGUAGE_COLORS.Terraform = LANGUAGE_COLORS.HCL;
 LANGUAGE_COLORS.Other = DEFAULT_COLOR;
 Object.freeze(LANGUAGE_COLORS);
 
-function getColor(language) {
-  if (typeof language !== 'string') return DEFAULT_COLOR;
-  const canonical = languageNames.get(language.trim().toLowerCase());
-  return canonical ? LANGUAGE_COLORS[canonical] : DEFAULT_COLOR;
+function lookupLanguage(language) {
+  if (typeof language === 'string') return languageNames.get(language.trim().toLowerCase());
 }
 
-module.exports = { LANGUAGE_COLORS, DEFAULT_COLOR, getColor };
+function getDisplayName(language) {
+  const canonical = lookupLanguage(language);
+  return supplemental[canonical]?.extensions ? canonical : language;
+}
+
+function getColor(language) {
+  return LANGUAGE_COLORS[lookupLanguage(language)] || DEFAULT_COLOR;
+}
+
+module.exports = { LANGUAGE_COLORS, DEFAULT_COLOR, getColor, getDisplayName };

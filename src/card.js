@@ -1,6 +1,6 @@
 'use strict';
 
-const { getColor } = require('./colors.js');
+const { getColor, getDisplayName } = require('./colors.js');
 
 const THEMES = {
   light: {
@@ -79,7 +79,7 @@ function renderCard(languages, owner, repo, theme = 'light', langsCount = 20, ca
     const row = Math.floor(i / COLS);
     const x = PADDING + col * colW;
     const y = LEGEND_TOP + row * LEGEND_ROW_H;
-    const name = escapeXml(truncate(language, nameMaxChars));
+    const name = escapeXml(truncate(getDisplayName(language), nameMaxChars));
     return `<g transform="translate(${x},${y})">
       <circle cx="5" cy="5" r="5" fill="${getColor(language)}" />
       <text x="15" y="9.5" font-family="${FONT}" font-size="11" fill="${t.textColor}">${name}</text>

@@ -32,6 +32,8 @@ Embed in your README:
 ![Language Stats](https://github-repository-language-graph-wi.vercel.app/api?username=vercel&repo=next.js&theme=dark)
 
 ![Language Stats](https://github-repository-language-graph-wi.vercel.app/api?username=torvalds&repo=linux&langs_count=5)
+
+![Aheui language stats](https://github-repository-language-graph-wi.vercel.app/api?username=aheui&repo=aheui.aheui)
 ```
 
 ## License
