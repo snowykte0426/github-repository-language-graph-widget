@@ -1,5 +1,7 @@
 'use strict';
 
+const { readFile }       = require('node:fs/promises');
+const { join }           = require('node:path');
 const { fetchLanguages } = require('../src/github.js');
 const { renderCard }     = require('../src/card.js');
 
@@ -7,13 +9,27 @@ const SAFE_NAME     = /^[a-zA-Z0-9_.\-]+$/;
 const ALLOWED_THEMES = new Set(['light', 'dark']);
 
 module.exports = async function handler(req, res) {
+  const urlObj = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+  if ((req.method === 'GET' || req.method === 'HEAD') &&
+      (urlObj.pathname === '/favicon.svg' || urlObj.pathname === '/favicon.ico')) {
+    const svg = urlObj.pathname === '/favicon.svg';
+    const icon = svg
+      ? await readFile(join(__dirname, '../public/favicon.svg'))
+      : await readFile(join(__dirname, '../public/favicon.ico'));
+    res.writeHead(200, {
+      'Content-Type': svg ? 'image/svg+xml' : 'image/x-icon',
+      'Content-Length': icon.length,
+      'Cache-Control': 'public, max-age=86400',
+    });
+    res.end(req.method === 'HEAD' ? undefined : icon);
+    return;
+  }
+
   if (req.method !== 'GET') {
     res.writeHead(405, { 'Content-Type': 'text/plain' });
     res.end('Method Not Allowed');
     return;
   }
-
-  const urlObj = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
 
   if (!urlObj.pathname.startsWith('/api')) {
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
@@ -75,6 +91,8 @@ function landingPage() {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GitHub Repository Language Graph</title>
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
