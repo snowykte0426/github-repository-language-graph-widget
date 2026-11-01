@@ -22,7 +22,7 @@ Embed in your README:
 |---|---|---|
 | `username` | Repository owner **(required)** | — |
 | `repo` | Repository name **(required)** | — |
-| `theme` | `auto`, `light`, or `dark` (`auto` follows the viewer's device preference) | `auto` |
+| `theme` | `light`, `dark`, or `auto` (`auto` follows the viewer's device preference) | `light` |
 | `langs_count` | Number of languages to show (max 100, rest grouped as Other) | `20` |
 | `width` | Card width in px (min 300, max 1000) | `495` |
 | `precision` | Decimal places for percentages (0–6) | `1` |
