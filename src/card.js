@@ -34,13 +34,13 @@ const FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-s
 // Approximate px-per-character for a given font-size (good enough for SVG layout)
 const CHAR_W = { 11: 6.2, 13: 7.3, 15: 8.5 };
 
-function renderCard(languages, owner, repo, theme = 'auto', langsCount = 20, cardWidth = DEFAULT_W, precision = 1) {
+function renderCard(languages, owner, repo, theme = 'light', langsCount = 20, cardWidth = DEFAULT_W, precision = 1) {
   const t = THEMES[theme] || THEMES.light;
   const themeStyles = theme === 'auto' ? `<style>
     @media (prefers-color-scheme: dark) {
-      .card-background { fill: #0d1117; stroke: #30363d; }
-      .card-title, .card-percent { fill: #e6edf3; }
-      .card-label { fill: #8b949e; }
+      .card-background { fill: ${THEMES.dark.bg}; stroke: ${THEMES.dark.border}; }
+      .card-title, .card-percent { fill: ${THEMES.dark.titleColor}; }
+      .card-label { fill: ${THEMES.dark.textColor}; }
     }
   </style>` : '';
   const limit = Math.min(Math.max(1, langsCount), HARD_MAX);
@@ -90,8 +90,8 @@ function renderCard(languages, owner, repo, theme = 'auto', langsCount = 20, car
     const name = escapeXml(truncate(getDisplayName(language), nameMaxChars));
     return `<g transform="translate(${x},${y})">
       <circle cx="5" cy="5" r="5" fill="${getColor(language)}" />
-      <text x="15" y="9.5" font-family="${FONT}" font-size="11" fill="${t.textColor}">${name}</text>
-      <text x="${(colW - 5).toFixed(1)}" y="9.5" text-anchor="end" font-family="${FONT}" font-size="11" font-weight="600" fill="${t.percentColor}">${percentage.toFixed(precision)}%</text>
+      <text x="15" y="9.5" class="card-label" font-family="${FONT}" font-size="11" fill="${t.textColor}">${name}</text>
+      <text x="${(colW - 5).toFixed(1)}" y="9.5" class="card-percent" text-anchor="end" font-family="${FONT}" font-size="11" font-weight="600" fill="${t.percentColor}">${percentage.toFixed(precision)}%</text>
     </g>`;
   });
 
