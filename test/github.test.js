@@ -5,6 +5,7 @@ const test = require('node:test');
 const { fetchLanguages } = require('../src/github');
 const { getColor, DEFAULT_COLOR } = require('../src/colors');
 const { renderCard } = require('../src/card');
+const handler = require('../api');
 
 function mockGitHub(t, reported, tree, treeStatus = 200) {
   return t.mock.method(global, 'fetch', async url => {
@@ -71,6 +72,24 @@ test('renders English labels for legacy names and preserves standard GitHub labe
   const svg = renderCard(languages.map(language => ({ language, percentage: 20 })), 'test', 'names');
   const labels = [...svg.matchAll(/<text x="15"[^>]*>([^<]+)<\/text>/g)].map(match => match[1]);
   assert.deepEqual(labels, ['umjunsik-lang', 'Aheui', 'Hyeo-ung', 'JavaScript', 'Terraform']);
+});
+
+test('uses the precision query parameter for small percentages', async t => {
+  mockGitHub(t, { Main: 999, Tiny: 1 }, { tree: [] });
+  const req = {
+    method: 'GET',
+    url: '/api?username=test&repo=precision&precision=2',
+    headers: { host: 'localhost' },
+  };
+  const res = {
+    writeHead(statusCode) { this.statusCode = statusCode; },
+    end(body) { this.body = body; },
+  };
+
+  await handler(req, res);
+
+  assert.equal(res.statusCode, 200);
+  assert.match(res.body, />0\.10%<\/text>/);
 });
 
 test('uses the native totals on an incomplete tree and retries on the next lookup', async t => {

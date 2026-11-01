@@ -34,7 +34,7 @@ const FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-s
 // Approximate px-per-character for a given font-size (good enough for SVG layout)
 const CHAR_W = { 11: 6.2, 13: 7.3, 15: 8.5 };
 
-function renderCard(languages, owner, repo, theme = 'light', langsCount = 20, cardWidth = DEFAULT_W) {
+function renderCard(languages, owner, repo, theme = 'light', langsCount = 20, cardWidth = DEFAULT_W, precision = 1) {
   const t = THEMES[theme] || THEMES.light;
   const limit = Math.min(Math.max(1, langsCount), HARD_MAX);
   const W = Math.min(Math.max(cardWidth, MIN_W), MAX_W);
@@ -61,7 +61,8 @@ function renderCard(languages, owner, repo, theme = 'light', langsCount = 20, ca
   const colW = innerW / COLS;
 
   // Max chars for language name: colW minus dot(10px) minus percent(~45px) minus gap(10px)
-  const nameAvailW = colW - 10 - 45 - 10;
+  const percentW = Math.max(45, (precision + 5) * CHAR_W[11] + 10);
+  const nameAvailW = colW - 10 - percentW - 10;
   const nameMaxChars = Math.max(6, Math.floor(nameAvailW / CHAR_W[11]));
 
   // Stacked bar segments
@@ -83,7 +84,7 @@ function renderCard(languages, owner, repo, theme = 'light', langsCount = 20, ca
     return `<g transform="translate(${x},${y})">
       <circle cx="5" cy="5" r="5" fill="${getColor(language)}" />
       <text x="15" y="9.5" font-family="${FONT}" font-size="11" fill="${t.textColor}">${name}</text>
-      <text x="${(colW - 5).toFixed(1)}" y="9.5" text-anchor="end" font-family="${FONT}" font-size="11" font-weight="600" fill="${t.percentColor}">${percentage.toFixed(1)}%</text>
+      <text x="${(colW - 5).toFixed(1)}" y="9.5" text-anchor="end" font-family="${FONT}" font-size="11" font-weight="600" fill="${t.percentColor}">${percentage.toFixed(precision)}%</text>
     </g>`;
   });
 
