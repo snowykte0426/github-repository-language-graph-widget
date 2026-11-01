@@ -101,7 +101,10 @@ test('renders light by default and switches all theme colors only for auto', () 
 
 test('keeps API default light and supports explicit light, dark, and auto themes', async t => {
   mockGitHub(t, { JavaScript: 1 }, { tree: [] });
-  for (const [repo, theme] of [['default-theme', null], ['light-theme', 'light'], ['dark-theme', 'dark'], ['auto-theme', 'auto']]) {
+  for (const [repo, theme] of [
+    ['default-theme', null], ['light-theme', 'light'], ['dark-theme', 'dark'],
+    ['auto-theme', 'auto'], ['invalid-theme', 'invalid'],
+  ]) {
     const query = new URLSearchParams({ username: 'test', repo });
     if (theme) query.set('theme', theme);
     const req = {
