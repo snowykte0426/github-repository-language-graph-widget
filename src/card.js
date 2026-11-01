@@ -37,7 +37,7 @@ const CHAR_W = { 11: 6.2, 13: 7.3, 15: 8.5 };
 function renderCard(languages, owner, repo, theme = 'auto', langsCount = 20, cardWidth = DEFAULT_W, precision = 1) {
   const t = THEMES[theme] || THEMES.light;
   const themeStyles = theme === 'auto'
-    ? '<style>@media(prefers-color-scheme:dark){.card-background{fill:#0d1117;stroke:#30363d}.card-title,.card-percent{fill:#e6edf3}.card-label{fill:#8b949e}}</style>'
+    ? '<style>@media (prefers-color-scheme: dark) {.card-background{fill:#0d1117;stroke:#30363d}.card-title,.card-percent{fill:#e6edf3}.card-label{fill:#8b949e}}</style>'
     : '';
   const limit = Math.min(Math.max(1, langsCount), HARD_MAX);
   const W = Math.min(Math.max(cardWidth, MIN_W), MAX_W);
