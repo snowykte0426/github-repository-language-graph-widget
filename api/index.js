@@ -44,11 +44,8 @@ module.exports = async function handler(req, res) {
   const langsCount = langsRaw ? Math.min(Math.max(1, parseInt(langsRaw, 10) || 20), 100) : 20;
   const widthRaw   = urlObj.searchParams.get('width');
   const cardWidth  = widthRaw ? Math.min(Math.max(300, parseInt(widthRaw, 10) || 495), 1000) : 495;
-  const precisionRaw = urlObj.searchParams.get('precision');
-  const parsedPrecision = Number.parseInt(precisionRaw, 10);
-  const precision = precisionRaw === null || Number.isNaN(parsedPrecision)
-    ? 1
-    : Math.min(Math.max(0, parsedPrecision), 6);
+  const parsedPrecision = Number.parseInt(urlObj.searchParams.get('precision'), 10);
+  const precision = Math.min(Math.max(Number.isNaN(parsedPrecision) ? 1 : parsedPrecision, 0), 6);
 
   if (!username || !repo) {
     return sendError(res, 400, 'Missing required query parameters: username, repo');
