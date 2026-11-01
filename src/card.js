@@ -34,7 +34,7 @@ const FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-s
 // Approximate px-per-character for a given font-size (good enough for SVG layout)
 const CHAR_W = { 11: 6.2, 13: 7.3, 15: 8.5 };
 
-function renderCard(languages, owner, repo, theme = 'light', langsCount = 20, cardWidth = DEFAULT_W, precision = 1) {
+function renderCard(languages, owner, repo, theme = 'auto', langsCount = 20, cardWidth = DEFAULT_W, precision = 1) {
   const t = THEMES[theme] || THEMES.light;
   const themeStyles = theme === 'auto' ? `<style>
     @media (prefers-color-scheme: dark) {
