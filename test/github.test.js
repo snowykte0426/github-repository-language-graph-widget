@@ -73,6 +73,56 @@ test('renders English labels for legacy names and preserves standard GitHub labe
   assert.deepEqual(labels, ['umjunsik-lang', 'Aheui', 'Hyeo-ung', 'JavaScript', 'Terraform']);
 });
 
+test('follows device color preference by default and keeps explicit themes fixed', () => {
+  const languages = [{ language: 'JavaScript', percentage: 100 }];
+  const automatic = renderCard(languages, 'test', 'automatic');
+  const light = renderCard(languages, 'test', 'light', 'light');
+  const dark = renderCard(languages, 'test', 'dark', 'dark');
+
+  assert.match(automatic, /@media \(prefers-color-scheme: dark\)/);
+  assert.match(automatic, /\.card-background \{ fill: #0d1117; stroke: #30363d; \}/);
+  assert.doesNotMatch(light, /prefers-color-scheme/);
+  assert.match(light, /fill="#ffffff"/);
+  assert.doesNotMatch(dark, /prefers-color-scheme/);
+  assert.match(dark, /fill="#0d1117"/);
+});
+
+test('uses automatic theme when the theme parameter is omitted', async t => {
+  mockGitHub(t, { JavaScript: 1 }, { tree: [] });
+  const req = {
+    method: 'GET',
+    url: '/api?username=test&repo=automatic-theme',
+    headers: { host: 'localhost' },
+  };
+  const res = {
+    writeHead(statusCode) { this.statusCode = statusCode; },
+    end(body) { this.body = body; },
+  };
+
+  await handler(req, res);
+
+  assert.equal(res.statusCode, 200);
+  assert.match(res.body, /@media \(prefers-color-scheme: dark\)/);
+});
+
+test('uses the precision query parameter for small percentages', async t => {
+  mockGitHub(t, { Main: 999, Tiny: 1 }, { tree: [] });
+  const req = {
+    method: 'GET',
+    url: '/api?username=test&repo=precision&precision=2',
+    headers: { host: 'localhost' },
+  };
+  const res = {
+    writeHead(statusCode) { this.statusCode = statusCode; },
+    end(body) { this.body = body; },
+  };
+
+  await handler(req, res);
+
+  assert.equal(res.statusCode, 200);
+  assert.match(res.body, />0\.10%<\/text>/);
+});
+
 test('uses the native totals on an incomplete tree and retries on the next lookup', async t => {
   const fetch = mockGitHub(t, { Python: 13 }, { truncated: true, tree: [blob('main.umm', 19)] });
   const native = [{ language: 'Python', bytes: 13, percentage: 100 }];
