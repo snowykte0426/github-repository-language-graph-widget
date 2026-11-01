@@ -34,8 +34,15 @@ const FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-s
 // Approximate px-per-character for a given font-size (good enough for SVG layout)
 const CHAR_W = { 11: 6.2, 13: 7.3, 15: 8.5 };
 
-function renderCard(languages, owner, repo, theme = 'light', langsCount = 20, cardWidth = DEFAULT_W) {
+function renderCard(languages, owner, repo, theme = 'auto', langsCount = 20, cardWidth = DEFAULT_W, precision = 1) {
   const t = THEMES[theme] || THEMES.light;
+  const themeStyles = theme === 'auto' ? `<style>
+    @media (prefers-color-scheme: dark) {
+      .card-background { fill: ${THEMES.dark.bg}; stroke: ${THEMES.dark.border}; }
+      .card-title, .card-percent { fill: ${THEMES.dark.titleColor}; }
+      .card-label { fill: ${THEMES.dark.textColor}; }
+    }
+  </style>` : '';
   const limit = Math.min(Math.max(1, langsCount), HARD_MAX);
   const W = Math.min(Math.max(cardWidth, MIN_W), MAX_W);
 
@@ -84,17 +91,20 @@ function renderCard(languages, owner, repo, theme = 'light', langsCount = 20, ca
       <circle cx="5" cy="5" r="5" fill="${getColor(language)}" />
       <text x="15" y="9.5" font-family="${FONT}" font-size="11" fill="${t.textColor}">${name}</text>
       <text x="${(colW - 5).toFixed(1)}" y="9.5" text-anchor="end" font-family="${FONT}" font-size="11" font-weight="600" fill="${t.percentColor}">${percentage.toFixed(1)}%</text>
+      <text x="15" y="9.5" class="card-label" font-family="${FONT}" font-size="11" fill="${t.textColor}">${name}</text>
+      <text class="card-percent" x="${(colW - 5).toFixed(1)}" y="9.5" text-anchor="end" font-family="${FONT}" font-size="11" font-weight="600" fill="${t.percentColor}">${percentage.toFixed(precision)}%</text>
     </g>`;
   });
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${HEIGHT}" viewBox="0 0 ${W} ${HEIGHT}" role="img" aria-label="Language stats for ${escapeXml(owner)}/${escapeXml(repo)}">
+  ${themeStyles}
   <defs>
     <clipPath id="bar-clip">
       <rect x="${PADDING}" y="${BAR_Y}" width="${innerW}" height="${BAR_HEIGHT}" rx="${BAR_RADIUS}" ry="${BAR_RADIUS}" />
     </clipPath>
   </defs>
-  <rect width="${W}" height="${HEIGHT}" rx="4.5" ry="4.5" fill="${t.bg}" stroke="${t.border}" stroke-width="1" />
-  <text x="${PADDING}" y="38" font-family="${FONT}" font-size="${titleFontSize}" font-weight="600" fill="${t.titleColor}">${titleText}</text>
+  <rect class="card-background" width="${W}" height="${HEIGHT}" rx="4.5" ry="4.5" fill="${t.bg}" stroke="${t.border}" stroke-width="1" />
+  <text class="card-title" x="${PADDING}" y="38" font-family="${FONT}" font-size="${titleFontSize}" font-weight="600" fill="${t.titleColor}">${titleText}</text>
   <g clip-path="url(#bar-clip)">
     ${barSegments.join('\n    ')}
   </g>
