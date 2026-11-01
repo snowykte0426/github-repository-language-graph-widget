@@ -74,36 +74,55 @@ test('renders English labels for legacy names and preserves standard GitHub labe
   assert.deepEqual(labels, ['umjunsik-lang', 'Aheui', 'Hyeo-ung', 'JavaScript', 'Terraform']);
 });
 
-test('follows device color preference by default and keeps explicit themes fixed', () => {
+test('renders light by default and switches all theme colors only for auto', () => {
   const languages = [{ language: 'JavaScript', percentage: 100 }];
-  const automatic = renderCard(languages, 'test', 'automatic');
+  const defaultTheme = renderCard(languages, 'test', 'default');
   const light = renderCard(languages, 'test', 'light', 'light');
   const dark = renderCard(languages, 'test', 'dark', 'dark');
+  const automatic = renderCard(languages, 'test', 'automatic', 'auto');
 
+  for (const svg of [defaultTheme, light]) {
+    assert.doesNotMatch(svg, /prefers-color-scheme/);
+    assert.match(svg, /class="card-background"[^>]*fill="#ffffff" stroke="#e4e2e2"/);
+    assert.match(svg, /class="card-title"[^>]*fill="#2d333b"/);
+    assert.match(svg, /class="card-label"[^>]*fill="#636e7b"/);
+    assert.match(svg, /class="card-percent"[^>]*fill="#2d333b"/);
+  }
+  assert.doesNotMatch(dark, /prefers-color-scheme/);
+  assert.match(dark, /class="card-background"[^>]*fill="#0d1117" stroke="#30363d"/);
+  assert.match(dark, /class="card-title"[^>]*fill="#e6edf3"/);
+  assert.match(dark, /class="card-label"[^>]*fill="#8b949e"/);
+  assert.match(dark, /class="card-percent"[^>]*fill="#e6edf3"/);
   assert.match(automatic, /@media \(prefers-color-scheme: dark\)/);
   assert.match(automatic, /\.card-background \{ fill: #0d1117; stroke: #30363d; \}/);
-  assert.doesNotMatch(light, /prefers-color-scheme/);
-  assert.match(light, /fill="#ffffff"/);
-  assert.doesNotMatch(dark, /prefers-color-scheme/);
-  assert.match(dark, /fill="#0d1117"/);
+  assert.match(automatic, /\.card-title, \.card-percent \{ fill: #e6edf3; \}/);
+  assert.match(automatic, /\.card-label \{ fill: #8b949e; \}/);
 });
 
-test('uses automatic theme when the theme parameter is omitted', async t => {
+test('keeps API default light and supports explicit light, dark, and auto themes', async t => {
   mockGitHub(t, { JavaScript: 1 }, { tree: [] });
-  const req = {
-    method: 'GET',
-    url: '/api?username=test&repo=automatic-theme',
-    headers: { host: 'localhost' },
-  };
-  const res = {
-    writeHead(statusCode) { this.statusCode = statusCode; },
-    end(body) { this.body = body; },
-  };
+  for (const [repo, theme] of [['default-theme', null], ['light-theme', 'light'], ['dark-theme', 'dark'], ['auto-theme', 'auto']]) {
+    const query = new URLSearchParams({ username: 'test', repo });
+    if (theme) query.set('theme', theme);
+    const req = {
+      method: 'GET',
+      url: `/api?${query}`,
+      headers: { host: 'localhost' },
+    };
+    const res = {
+      writeHead(statusCode) { this.statusCode = statusCode; },
+      end(body) { this.body = body; },
+    };
 
-  await handler(req, res);
+    await handler(req, res);
 
-  assert.equal(res.statusCode, 200);
-  assert.match(res.body, /@media \(prefers-color-scheme: dark\)/);
+    assert.equal(res.statusCode, 200);
+    assert.equal(res.body.startsWith('<svg '), true);
+    assert.equal(res.body.includes('prefers-color-scheme'), theme === 'auto');
+    assert.match(res.body, theme === 'dark'
+      ? /class="card-background"[^>]*fill="#0d1117"/
+      : /class="card-background"[^>]*fill="#ffffff"/);
+  }
 });
 
 test('uses the precision query parameter for small percentages', async t => {
