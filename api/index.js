@@ -7,6 +7,14 @@ const { renderCard }     = require('../src/card.js');
 
 const SAFE_NAME     = /^[a-zA-Z0-9_.\-]+$/;
 const ALLOWED_THEMES = new Set(['auto', 'light', 'dark']);
+const DEFAULT_THEME  = 'auto';
+
+// The landing page preview is the same for every visitor, so it is cached hard
+// at the CDN and the last successful render is kept as a fallback.
+const PREVIEW = { owner: 'vercel', repo: 'next.js', theme: 'auto' };
+const PREVIEW_CACHE = 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800, stale-if-error=604800';
+const PAGE_CACHE    = 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800';
+let lastPreviewSvg = null;
 
 module.exports = async function handler(req, res) {
   const urlObj = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
@@ -31,15 +39,19 @@ module.exports = async function handler(req, res) {
     return;
   }
 
+  if (urlObj.pathname === '/preview.svg') {
+    return sendPreview(res);
+  }
+
   if (!urlObj.pathname.startsWith('/api')) {
-    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': PAGE_CACHE });
     res.end(landingPage());
     return;
   }
 
   const username  = (urlObj.searchParams.get('username') || '').trim();
   const repo      = (urlObj.searchParams.get('repo')     || '').trim();
-  const theme     = urlObj.searchParams.get('theme') || 'light';
+  const theme     = urlObj.searchParams.get('theme') || DEFAULT_THEME;
   const langsRaw   = urlObj.searchParams.get('langs_count');
   const langsCount = langsRaw ? Math.min(Math.max(1, parseInt(langsRaw, 10) || 20), 100) : 20;
   const widthRaw   = urlObj.searchParams.get('width');
@@ -54,7 +66,7 @@ module.exports = async function handler(req, res) {
     return sendError(res, 400, 'Invalid username or repo name');
   }
 
-  const resolvedTheme = ALLOWED_THEMES.has(theme) ? theme : 'light';
+  const resolvedTheme = ALLOWED_THEMES.has(theme) ? theme : DEFAULT_THEME;
 
   try {
     const languages = await fetchLanguages(username, repo);
@@ -70,6 +82,21 @@ module.exports = async function handler(req, res) {
     sendError(res, err.statusCode || 500, err.message);
   }
 };
+
+async function sendPreview(res) {
+  try {
+    const languages = await fetchLanguages(PREVIEW.owner, PREVIEW.repo);
+    lastPreviewSvg = renderCard(languages, PREVIEW.owner, PREVIEW.repo, PREVIEW.theme);
+  } catch (err) {
+    if (!lastPreviewSvg) return sendError(res, err.statusCode || 500, err.message);
+  }
+  res.writeHead(200, {
+    'Content-Type':           'image/svg+xml',
+    'Cache-Control':          PREVIEW_CACHE,
+    'X-Content-Type-Options': 'nosniff',
+  });
+  res.end(lastPreviewSvg);
+}
 
 function sendError(res, code, message) {
   const safe = escapeXml(String(message));
@@ -147,7 +174,7 @@ function landingPage() {
     <p class="subtitle">SVG language statistics for a GitHub repository, with automatic detection of umjunsik-lang, Aheui, Hyeo-ung, ArnoldC, Chef and Chicken.</p>
 
     <div class="preview">
-      <img src="/api?username=vercel&repo=next.js&theme=auto" alt="Language stats for vercel/next.js" />
+      <img src="/preview.svg" alt="Language stats for vercel/next.js" />
     </div>
 
     <div class="section">
@@ -164,7 +191,7 @@ function landingPage() {
         <tbody>
           <tr><td>username</td><td>Repository owner (required)</td><td>—</td></tr>
           <tr><td>repo</td><td>Repository name (required)</td><td>—</td></tr>
-          <tr><td>theme</td><td><span class="badge">auto</span>, <span class="badge">light</span>, or <span class="badge">dark</span></td><td>light</td></tr>
+          <tr><td>theme</td><td><span class="badge">auto</span>, <span class="badge">light</span>, or <span class="badge">dark</span> (<span class="badge">auto</span> follows the viewer's device preference)</td><td>auto</td></tr>
           <tr><td>langs_count</td><td>Number of languages to display (max 100, rest grouped as Other)</td><td>20</td></tr>
           <tr><td>width</td><td>Card width in px (min 300, max 1000) — title &amp; names auto-scale</td><td>495</td></tr>
           <tr><td>precision</td><td>Decimal places for percentages (0–6)</td><td>1</td></tr>
