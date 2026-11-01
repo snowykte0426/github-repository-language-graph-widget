@@ -3,10 +3,10 @@
 const { readFile }       = require('node:fs/promises');
 const { join }           = require('node:path');
 const { fetchLanguages } = require('../src/github.js');
-const { renderCard }     = require('../src/card.js');
+const { renderCard, THEME_NAMES } = require('../src/card.js');
 
 const SAFE_NAME     = /^[a-zA-Z0-9_.\-]+$/;
-const ALLOWED_THEMES = new Set(['auto', 'light', 'dark']);
+const ALLOWED_THEMES = new Set(THEME_NAMES);
 const DEFAULT_THEME  = 'auto';
 
 // The landing page preview is the same for every visitor, so it is cached hard
@@ -189,12 +189,12 @@ function landingPage() {
       <table>
         <thead><tr><th>Parameter</th><th>Description</th><th>Default</th></tr></thead>
         <tbody>
-          <tr><td>username</td><td>Repository owner (required)</td><td>—</td></tr>
-          <tr><td>repo</td><td>Repository name (required)</td><td>—</td></tr>
-          <tr><td>theme</td><td><span class="badge">auto</span>, <span class="badge">light</span>, or <span class="badge">dark</span> (<span class="badge">auto</span> follows the viewer's device preference)</td><td>auto</td></tr>
+          <tr><td>username</td><td>Repository owner (required)</td><td>-</td></tr>
+          <tr><td>repo</td><td>Repository name (required)</td><td>-</td></tr>
+          <tr><td>theme</td><td>${THEME_NAMES.map(n => `<span class="badge">${n}</span>`).join(' ')}<br/><span style="color:#8b949e;">auto follows the viewer's device preference</span></td><td>auto</td></tr>
           <tr><td>langs_count</td><td>Number of languages to display (max 100, rest grouped as Other)</td><td>20</td></tr>
-          <tr><td>width</td><td>Card width in px (min 300, max 1000) — title &amp; names auto-scale</td><td>495</td></tr>
-          <tr><td>precision</td><td>Decimal places for percentages (0–6)</td><td>1</td></tr>
+          <tr><td>width</td><td>Card width in px (min 300, max 1000). Title &amp; names auto-scale</td><td>495</td></tr>
+          <tr><td>precision</td><td>Decimal places for percentages (0-6)</td><td>1</td></tr>
         </tbody>
       </table>
     </div>
@@ -202,7 +202,8 @@ function landingPage() {
     <div class="section">
       <h2>Examples</h2>
       <div class="code-block">/api?username=torvalds&amp;repo=linux&amp;theme=auto
-/api?username=microsoft&amp;repo=vscode&amp;theme=light&amp;langs_count=5</div>
+/api?username=microsoft&amp;repo=vscode&amp;theme=light&amp;langs_count=5
+/api?username=vercel&amp;repo=next.js&amp;theme=tokyonight</div>
     </div>
 
     <div class="footer">MIT License · <a href="https://github.com/snowykte0426/github-repository-language-graph" style="color:#484f58;">snowykte0426</a></div>

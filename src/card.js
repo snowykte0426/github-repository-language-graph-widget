@@ -17,7 +17,101 @@ const THEMES = {
     textColor:    '#8b949e',
     percentColor: '#e6edf3',
   },
+  github_dark_dimmed: {
+    bg:           '#22272e',
+    border:       '#444c56',
+    titleColor:   '#adbac7',
+    textColor:    '#768390',
+    percentColor: '#adbac7',
+  },
+  dracula: {
+    bg:           '#282a36',
+    border:       '#44475a',
+    titleColor:   '#ff79c6',
+    textColor:    '#f8f8f2',
+    percentColor: '#bd93f9',
+  },
+  nord: {
+    bg:           '#2e3440',
+    border:       '#3b4252',
+    titleColor:   '#88c0d0',
+    textColor:    '#d8dee9',
+    percentColor: '#eceff4',
+  },
+  tokyonight: {
+    bg:           '#1a1b26',
+    border:       '#292e42',
+    titleColor:   '#7aa2f7',
+    textColor:    '#a9b1d6',
+    percentColor: '#bb9af7',
+  },
+  one_dark: {
+    bg:           '#282c34',
+    border:       '#3e4451',
+    titleColor:   '#61afef',
+    textColor:    '#abb2bf',
+    percentColor: '#e5c07b',
+  },
+  monokai: {
+    bg:           '#272822',
+    border:       '#3e3d32',
+    titleColor:   '#f92672',
+    textColor:    '#f8f8f2',
+    percentColor: '#a6e22e',
+  },
+  gruvbox: {
+    bg:           '#282828',
+    border:       '#3c3836',
+    titleColor:   '#fabd2f',
+    textColor:    '#ebdbb2',
+    percentColor: '#fe8019',
+  },
+  gruvbox_light: {
+    bg:           '#fbf1c7',
+    border:       '#d5c4a1',
+    titleColor:   '#b57614',
+    textColor:    '#3c3836',
+    percentColor: '#af3a03',
+  },
+  solarized_dark: {
+    bg:           '#002b36',
+    border:       '#073642',
+    titleColor:   '#268bd2',
+    textColor:    '#93a1a1',
+    percentColor: '#2aa198',
+  },
+  solarized_light: {
+    bg:           '#fdf6e3',
+    border:       '#eee8d5',
+    titleColor:   '#268bd2',
+    textColor:    '#586e75',
+    percentColor: '#2aa198',
+  },
+  catppuccin_mocha: {
+    bg:           '#1e1e2e',
+    border:       '#313244',
+    titleColor:   '#cba6f7',
+    textColor:    '#cdd6f4',
+    percentColor: '#f5c2e7',
+  },
+  catppuccin_latte: {
+    bg:           '#eff1f5',
+    border:       '#ccd0da',
+    titleColor:   '#8839ef',
+    textColor:    '#4c4f69',
+    percentColor: '#ea76cb',
+  },
+  rose_pine: {
+    bg:           '#191724',
+    border:       '#26233a',
+    titleColor:   '#ebbcba',
+    textColor:    '#e0def4',
+    percentColor: '#c4a7e7',
+  },
 };
+
+// 'auto' renders light colors and switches to dark via prefers-color-scheme.
+const THEME_NAMES = ['auto', ...Object.keys(THEMES)];
 
 const HARD_MAX   = 100;
 const DEFAULT_W  = 495;
@@ -39,7 +133,8 @@ function renderCard(languages, owner, repo, theme = 'auto', langsCount = 20, car
   const themeStyles = theme === 'auto' ? `<style>
     @media (prefers-color-scheme: dark) {
       .card-background { fill: ${THEMES.dark.bg}; stroke: ${THEMES.dark.border}; }
-      .card-title, .card-percent { fill: ${THEMES.dark.titleColor}; }
+      .card-title { fill: ${THEMES.dark.titleColor}; }
+      .card-percent { fill: ${THEMES.dark.percentColor}; }
       .card-label { fill: ${THEMES.dark.textColor}; }
     }
   </style>` : '';
@@ -124,4 +219,4 @@ function truncate(str, maxLen) {
   return str.length > maxLen ? str.slice(0, maxLen - 1) + '…' : str;
 }
 
-module.exports = { renderCard };
+module.exports = { renderCard, THEME_NAMES };
