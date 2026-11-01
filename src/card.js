@@ -68,7 +68,8 @@ function renderCard(languages, owner, repo, theme = 'auto', langsCount = 20, car
   const colW = innerW / COLS;
 
   // Max chars for language name: colW minus dot(10px) minus percent(~45px) minus gap(10px)
-  const nameAvailW = colW - 10 - 45 - 10;
+  const percentW = Math.max(45, (precision + 5) * CHAR_W[11] + 10);
+  const nameAvailW = colW - 10 - percentW - 10;
   const nameMaxChars = Math.max(6, Math.floor(nameAvailW / CHAR_W[11]));
 
   // Stacked bar segments
@@ -89,8 +90,8 @@ function renderCard(languages, owner, repo, theme = 'auto', langsCount = 20, car
     const name = escapeXml(truncate(getDisplayName(language), nameMaxChars));
     return `<g transform="translate(${x},${y})">
       <circle cx="5" cy="5" r="5" fill="${getColor(language)}" />
-      <text x="15" y="9.5" class="card-label" font-family="${FONT}" font-size="11" fill="${t.textColor}">${name}</text>
-      <text class="card-percent" x="${(colW - 5).toFixed(1)}" y="9.5" text-anchor="end" font-family="${FONT}" font-size="11" font-weight="600" fill="${t.percentColor}">${percentage.toFixed(precision)}%</text>
+      <text x="15" y="9.5" font-family="${FONT}" font-size="11" fill="${t.textColor}">${name}</text>
+      <text x="${(colW - 5).toFixed(1)}" y="9.5" text-anchor="end" font-family="${FONT}" font-size="11" font-weight="600" fill="${t.percentColor}">${percentage.toFixed(precision)}%</text>
     </g>`;
   });
 

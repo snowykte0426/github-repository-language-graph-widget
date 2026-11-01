@@ -5,6 +5,7 @@ const test = require('node:test');
 const { fetchLanguages } = require('../src/github');
 const { getColor, DEFAULT_COLOR } = require('../src/colors');
 const { renderCard } = require('../src/card');
+const handler = require('../api');
 
 function mockGitHub(t, reported, tree, treeStatus = 200) {
   return t.mock.method(global, 'fetch', async url => {
