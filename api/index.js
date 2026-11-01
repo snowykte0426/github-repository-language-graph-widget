@@ -6,7 +6,7 @@ const { fetchLanguages } = require('../src/github.js');
 const { renderCard }     = require('../src/card.js');
 
 const SAFE_NAME     = /^[a-zA-Z0-9_.\-]+$/;
-const ALLOWED_THEMES = new Set(['light', 'dark']);
+const ALLOWED_THEMES = new Set(['auto', 'light', 'dark']);
 
 module.exports = async function handler(req, res) {
   const urlObj = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
@@ -147,7 +147,7 @@ function landingPage() {
     <p class="subtitle">SVG language statistics for a GitHub repository, with automatic detection of umjunsik-lang, Aheui, Hyeo-ung, ArnoldC, Chef and Chicken.</p>
 
     <div class="preview">
-      <img src="/api?username=vercel&repo=next.js&theme=dark" alt="Language stats for vercel/next.js" />
+      <img src="/api?username=vercel&repo=next.js&theme=auto" alt="Language stats for vercel/next.js" />
     </div>
 
     <div class="section">
@@ -164,7 +164,7 @@ function landingPage() {
         <tbody>
           <tr><td>username</td><td>Repository owner (required)</td><td>—</td></tr>
           <tr><td>repo</td><td>Repository name (required)</td><td>—</td></tr>
-          <tr><td>theme</td><td><span class="badge">light</span> or <span class="badge">dark</span></td><td>light</td></tr>
+          <tr><td>theme</td><td><span class="badge">auto</span>, <span class="badge">light</span>, or <span class="badge">dark</span></td><td>light</td></tr>
           <tr><td>langs_count</td><td>Number of languages to display (max 100, rest grouped as Other)</td><td>20</td></tr>
           <tr><td>width</td><td>Card width in px (min 300, max 1000) — title &amp; names auto-scale</td><td>495</td></tr>
           <tr><td>precision</td><td>Decimal places for percentages (0–6)</td><td>1</td></tr>
@@ -174,7 +174,7 @@ function landingPage() {
 
     <div class="section">
       <h2>Examples</h2>
-      <div class="code-block">/api?username=torvalds&amp;repo=linux&amp;theme=dark
+      <div class="code-block">/api?username=torvalds&amp;repo=linux&amp;theme=auto
 /api?username=microsoft&amp;repo=vscode&amp;theme=light&amp;langs_count=5</div>
     </div>
 
